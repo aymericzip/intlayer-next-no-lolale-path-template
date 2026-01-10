@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
 import { IntlayerClientProvider, LocalPromiseParams } from "next-intlayer";
-import { getHTMLTextDir, getIntlayer, getLocale } from "intlayer";
-import { headers, cookies } from "next/headers";
+import { getHTMLTextDir, getIntlayer } from "intlayer";
 export { generateStaticParams } from "next-intlayer";
+import { getLocale } from "next-intlayer/server";
 
 export const generateMetadata = async ({
   params,
@@ -24,18 +24,7 @@ const RootLayout = async ({
 }: Readonly<{
   children: ReactNode;
 }>) => {
-  // Await headers and cookies in Next.js 15+
-  const headerList = await headers();
-  const cookieList = await cookies();
-
-  const locale = await getLocale({
-    // First check for intlayer cookie (default: 'INTLAYER_LOCALE')
-    getCookie: (name) => cookieList.get(name)?.value,
-
-    // Then check for intlayer header (default: 'x-intlayer-locale')
-    // And finally check for accept-language header ('accept-language')
-    getHeader: (name) => headerList.get(name),
-  });
+  const locale = await getLocale();
 
   return (
     <html lang={locale} dir={getHTMLTextDir(locale)}>
