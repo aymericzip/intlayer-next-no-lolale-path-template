@@ -9,14 +9,10 @@ export const LocaleSwitcher: FC = () => {
   const { searchInput, localeSwitcherLabel } = useIntlayer("locale-switcher");
   const inputRef = useRef<HTMLInputElement>(null);
   const [isOpen, setIsOpen] = useState(false);
-  const { locale, availableLocales, setLocale } = useLocale({
-    onChange: () => {
-      window.location.reload(); // Reload to refresh server components
-    },
-  });
+  const { locale, availableLocales, setLocale } = useLocale();
   const { searchResults, handleSearch } = useLocaleSearch(
     availableLocales,
-    locale
+    locale,
   );
 
   return (
@@ -75,7 +71,7 @@ export const LocaleSwitcher: FC = () => {
                     </span>
                   </button>
                 </li>
-              )
+              ),
             )}
           </ul>
         </div>
