@@ -14,23 +14,23 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "fuse.js": "7.1.0",
+    "fuse.js": "7.4.2",
     "intlayer": "9.0.0-canary.12",
-    "next": "^16.1.1",
+    "next": "^16.2.10",
     "next-intlayer": "9.0.0-canary.12",
     "react": "19.2.3",
     "react-dom": "19.2.3"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.18.1.18",
-    "@types/node": "^25.0.5",
+    "@tailwindcss/postcss": "^4.3.2",
+    "@types/node": "^26.1.0",
     "@intlayer/swc": "9.0.0-canary.12",
-    "@types/react": "^19.2.8",
+    "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
-    "eslint": "^9.39.2",
+    "eslint": "^9.39.4",
     "eslint-config-next": "16.1.1",
     "intlayer-editor": "9.0.0-canary.12",
-    "tailwindcss": "^4.1.18",
-    "typescript": "^5.9.3"
+    "tailwindcss": "^4.3.2",
+    "typescript": "^6.0.3"
   }
 }
