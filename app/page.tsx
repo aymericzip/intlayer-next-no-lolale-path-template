@@ -81,11 +81,11 @@ const Page = async () => {
   const locale = await getLocale();
 
   return (
-    <IntlayerServerProvider locale={locale}>
+    <>
       <PageContent />
       <ServerComponentExample />
       <ClientComponentExample />
-    </IntlayerServerProvider>
+    </>
   );
 };
 
